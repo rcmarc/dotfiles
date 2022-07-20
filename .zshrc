@@ -28,4 +28,4 @@ export PATH=~/.local/lib/nodejs/node-v16.15.1-linux-x64/bin:$PATH
 # cargo
 export PATH=~/.cargo/bin:$PATH
 
-alias luamake=/home/rcmarc/Coding/lua-language-server/3rd/luamake/luamake
+alias luamake=~/.config/lua-language-server/3rd/luamake/luamake

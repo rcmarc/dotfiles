@@ -1,3 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule ".config/lua-language-server"]
+	path = .config/lua-language-server
+	url = https://github.com/sumneko/lua-language-server
