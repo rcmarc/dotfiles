@@ -4,3 +4,6 @@
 [submodule ".config/lua-language-server"]
 	path = .config/lua-language-server
 	url = https://github.com/sumneko/lua-language-server
+[submodule ".zsh/zsh-autosuggestions"]
+	path = .zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
