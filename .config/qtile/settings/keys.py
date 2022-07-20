@@ -60,7 +60,7 @@ keys = [
     Key([mod], "space", lazy.spawn('rofi -show drun')),
 
     # LAUNCH arandr
-    Key([mod, "shift"], "a", lazy.spawn('arandr')),
+    Key([mod, "shift"], "a", lazy.spawn('lxrandr')),
 
     # SCREENSHOT
     Key([mod, "shift"], "s", lazy.spawn('gnome-screenshot -i')),
