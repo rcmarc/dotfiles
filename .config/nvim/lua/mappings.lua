@@ -60,3 +60,12 @@ function OnAttach(_, bufnr)
   noremap('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 
 end
+
+--snippets 
+
+local opts = {noremap=true, silent=true}
+
+vim.keymap.set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'')
+noremap('i', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
+noremap('s', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
+noremap('s', '<Tab>', '<cmd>lua require(\'luasnip\').jump(1)<cr>', opts)

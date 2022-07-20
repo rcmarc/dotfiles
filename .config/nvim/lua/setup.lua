@@ -9,3 +9,4 @@ require('nvim-treesitter.configs').setup {
 require('distant').setup {
   ['*'] = require('distant.settings').chip_default()
 }
+require('luasnip.loaders.from_vscode').lazy_load()
