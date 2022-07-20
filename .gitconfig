@@ -3,3 +3,5 @@
 [user]
 	email = ramoscarrer@gmail.com
 	name = Marcos Carrera
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
