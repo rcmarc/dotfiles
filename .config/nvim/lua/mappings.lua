@@ -34,8 +34,8 @@ noremap('n', '<C-s>', ':w<cr>')
 noremap('v', '<C-s>', ':w<cr>')
 noremap('i', '<C-s>', '<C-c>:w<cr>i')
 
-function OnAttach(_, bufnr)
 
+function OnAttach(_, bufnr)
   local opts = { noremap=true, silent=true }
   noremap('n', '<space>e', vim.diagnostic.open_float, opts)
   noremap('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -58,14 +58,13 @@ function OnAttach(_, bufnr)
   noremap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   noremap('n', 'gr', vim.lsp.buf.references, bufopts)
   noremap('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-
 end
 
 --snippets 
 
 local opts = {noremap=true, silent=true}
 
-vim.keymap.set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'')
+vim.keymap.set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'', {silent=true, expr=true})
 noremap('i', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
 noremap('s', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
 noremap('s', '<Tab>', '<cmd>lua require(\'luasnip\').jump(1)<cr>', opts)
