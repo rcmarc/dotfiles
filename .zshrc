@@ -22,9 +22,6 @@ alias dots="git --git-dir=$HOME/Coding/dotfiles --work-tree=$HOME"
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# node
-export PATH=~/.local/lib/nodejs/node-v16.15.1-linux-x64/bin:$PATH
-
 # cargo
 export PATH=~/.cargo/bin:$PATH
 
