@@ -16,7 +16,7 @@ fi
 alias ls="ls --color=auto"
 alias nvimz="nvim ~/.zshrc"
 alias npmg="npm --location=global"
-alias dots="git --git-dir=$HOME/Coding/dotfiles --work-tree=$HOME"
+alias dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # plugins
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
