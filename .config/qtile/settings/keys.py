@@ -10,6 +10,7 @@ keys = [
 
     # SUPER + SHIFT KEYS
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "q", lazy.shutdown()),
 
     # CHANGE FOCUS
     Key([mod], "k", lazy.layout.up()),
