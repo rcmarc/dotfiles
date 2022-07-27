@@ -90,7 +90,7 @@ def clock(**kwargs):
 
 def net(**kwargs):
     return [
-        icon(' ', **kwargs),
+        icon('  ', **kwargs),
         widget.Net(
             format="{down}  {up}  ",
             padding=0,
