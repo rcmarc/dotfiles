@@ -67,9 +67,9 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn('gnome-screenshot -i')),
 
     # MULTIMEDIA
-    Key([], "XF86AudioRaiseVolume", lazy.spawn('amixer set Master 5%+')),
-    Key([], "XF86AudioLowerVolume", lazy.spawn('amixer set Master 5%-')),
-    Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse set Master 1+ toggle')),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%')),
+    Key([], "XF86AudioLowerVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')),
+    Key([], "XF86AudioMute", lazy.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle')),
     Key([], "XF86AudioPlay", lazy.spawn('playerctl play-pause')),
     Key([], "XF86AudioNext", lazy.spawn('playerctl next')),
     Key([], "XF86AudioPrev", lazy.spawn('playerctl prev')),

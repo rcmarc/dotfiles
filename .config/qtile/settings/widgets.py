@@ -67,7 +67,7 @@ def brightness(**kwargs):
 def volume(**kwargs):
     return [
         icon(' 墳 ', **kwargs),
-        widget.Volume(**base(**kwargs))
+        widget.PulseVolume(**base(**kwargs))
     ]
 
 
