@@ -55,7 +55,7 @@ keys = [
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
     # RUN ALACRITTY
-    Key([mod], "Return", lazy.spawn('alacritty')),
+    Key([mod], "Return", lazy.spawn('kitty')),
 
     # RUN ROFI LAUNCHER
     Key([mod], "space", lazy.spawn('rofi -show drun')),
