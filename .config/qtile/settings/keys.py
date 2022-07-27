@@ -77,8 +77,4 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn('xbacklight -inc 5')),
     Key([], "XF86MonBrightnessDown", lazy.spawn('xbacklight -dec 5')),
 
-    # ARCOLINUX LOGOUT
-    Key([mod], "x", lazy.spawn('archlinux-logout')),
-    
-
 ]
