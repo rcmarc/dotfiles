@@ -1,70 +1,113 @@
-local function noremap(mode, lhs, rhs, bufopts)
-  bufopts = bufopts or {noremap = true}
-  vim.keymap.set(mode, lhs, rhs, {noremap=true})
+local keymap = vim.keymap
+
+-- Do not yank with 'x'
+keymap.set('n', 'x', '"_x')
+
+-- Select all
+keymap.set('n', '<C-a>', 'ggVG')
+
+-- New tab
+keymap.set('n', '<leader>te', ':tabedit<cr>', { silent = true })
+
+-- New split
+keymap.set('n', '<leader>ss', ':split<cr><C-w>w', { silent = true })
+keymap.set('n', '<leader>sv', ':vsplit<cr><C-w>w', { silent = true })
+
+-- Focus
+keymap.set('t', '<Esc>', '<C-\\><C-n>')
+keymap.set('t', '<A-h>', '<C-\\><C-N><C-w>h')
+keymap.set('t', '<A-j>', '<C-\\><C-N><C-w>j')
+keymap.set('t', '<A-k>', '<C-\\><C-N><C-w>k')
+keymap.set('t', '<A-l>', '<C-\\><C-N><C-w>l')
+keymap.set('n', '<A-h>', '<C-w>h')
+keymap.set('n', '<A-j>', '<C-w>j')
+keymap.set('n', '<A-k>', '<C-w>k')
+keymap.set('n', '<A-l>', '<C-w>l')
+
+-- Resize
+keymap.set('n', '<C-w><left>', '<C-w><')
+keymap.set('n', '<C-w><right>', '<C-w>>')
+keymap.set('n', '<C-w><up>', '<C-w>+')
+keymap.set('n', '<C-w><down>', '<C-w>-')
+
+-- Remove search highlight
+keymap.set('n', '<leader>h', ':nohlsearch<cr>', { silent = true })
+
+-- Navigate throught buffers
+keymap.set('n', '<leader><Tab>', ':bnext<cr>', { silent = true })
+keymap.set('n', '<leader><S-Tab>', ':bprevious<cr>', { silent = true })
+
+-- Telescope
+keymap.set('n', '<leader>ff', ':Telescope find_files<cr>')
+keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
+keymap.set('n', '<leader>fgc', ':Telescope git_commits<cr>', { silent = true })
+keymap.set('n', '<leader>fgg', ':Telescope git_status<cr>', { silent = true })
+keymap.set('n', '<leader>fe', '<cmd>lua require(\'telescope.builtin\').diagnostics({bufnr=0})<cr>')
+
+-- Save buffer
+keymap.set('n', '<C-s>', ':w<cr>')
+keymap.set('v', '<C-s>', ':w<cr>')
+keymap.set('i', '<C-s>', '<C-c>:w<cr>i')
+
+-- Toggle Explorer
+keymap.set('n', '<leader>ee', ':NvimTreeToggle<cr>')
+
+-- Delete buffer
+keymap.set('n', '<leader>bd', ':bdelete!<cr>')
+
+-- Terminal
+keymap.set('n', '<leader>tt', ':ToggleTerm<cr>')
+
+-- Debug
+local opt = { silent = true }
+keymap.set('n', '<leader>D', ':lua require\'dap\'.continue()<cr>', opt)
+keymap.set('n', '<leader>B', ':lua require\'dap\'.toggle_breakpoint()<cr>', opt)
+keymap.set('n', '<leader>j', ':lua require\'dap\'.step_into()<cr>', opt)
+keymap.set('n', '<leader>l', ':lua require\'dap\'.step_over()<cr>', opt)
+
+-- Eslint formatting
+local es_files = {
+  'javascript',
+  'javascriptreact',
+  'javascript.jsx',
+  'typescript',
+  'typescriptreact',
+  'typescript.tsx',
+  'vue'
+}
+
+local function format()
+  for _, ft in pairs(es_files) do
+    if (vim.bo.filetype == ft) then
+      return vim.cmd('EslintFixAll')
+    end
+  end
+  return vim.lsp.buf.formatting()
 end
-
-noremap('n', '<leader>ff', ':Telescope find_files<cr>')
-noremap('n', '<leader>fb', ':Telescope buffers<cr>')
-noremap('n', '<leader>fp', ':Telescope projects<cr>')
-
-noremap('n', '<leader>ee', ':NvimTreeFocus<cr>')
-noremap('n', '<leader>ew', ':NvimTreeClose<cr>')
-noremap('n', '<leader>er', ':NvimTreeRefresh<cr>')
-
-noremap('n', '<leader><TAB>', ':bNext<cr>')
-noremap('n', '<leader><bf>', ':bfirst<cr>')
-
-noremap('n', '<leader>bd', ':bdelete!<cr>')
-
-noremap('n', '<leader>tt', ':terminal<cr>')
-noremap('t', '<Esc>', '<C-\\><C-n>')
-noremap('t', '<A-h>', '<C-\\><C-N><C-w>h')
-noremap('t', '<A-j>', '<C-\\><C-N><C-w>j')
-noremap('t', '<A-k>', '<C-\\><C-N><C-w>k')
-noremap('t', '<A-l>', '<C-\\><C-N><C-w>l')
-noremap('n', '<A-h>', '<C-w>h')
-noremap('n', '<A-j>', '<C-w>j')
-noremap('n', '<A-k>', '<C-w>k')
-noremap('n', '<A-l>', '<C-w>l')
-
-noremap('n', '<leader>I', ':Neoformat<cr>')
-noremap('v', '<leader>I', ':Neoformat<cr>')
-
-noremap('n', '<C-s>', ':w<cr>')
-noremap('v', '<C-s>', ':w<cr>')
-noremap('i', '<C-s>', '<C-c>:w<cr>i')
-
 
 function OnAttach(_, bufnr)
-  local opts = { noremap=true, silent=true }
-  noremap('n', '<space>e', vim.diagnostic.open_float, opts)
-  noremap('n', '[d', vim.diagnostic.goto_prev, opts)
-  noremap('n', ']d', vim.diagnostic.goto_next, opts)
-  noremap('n', '<space>q', vim.diagnostic.setloclist, opts)
+  local opts = { noremap = true, silent = true }
+  keymap.set('n', '<leader>d', ':Lspsaga show_line_diagnostics<cr>', opts)
+  keymap.set('n', '<leader>T', ':TroubleToggle<cr>', opts)
+  keymap.set("n", "[e", ":Lspsaga diagnostic_jump_next<cr>", { silent = true })
+  keymap.set("n", "]e", ":Lspsaga diagnostic_jump_prev<cr>", { silent = true })
 
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  noremap('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  noremap('n', 'gd', vim.lsp.buf.definition, bufopts)
-  noremap('n', 'K', vim.lsp.buf.hover, bufopts)
-  noremap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  noremap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  noremap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  noremap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  noremap('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  noremap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  noremap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  noremap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  noremap('n', 'gr', vim.lsp.buf.references, bufopts)
-  noremap('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  keymap.set('n', 'gD', vim.lsp.buf.definition, bufopts)
+  keymap.set('n', 'gd', ':Lspsaga preview_definition<cr>', bufopts)
+  keymap.set('n', 'K', ':Lspsaga hover_doc<cr>', bufopts)
+  keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  keymap.set('n', '<C-k>', ':Lspsaga signature_help<cr>', bufopts)
+  keymap.set('n', '<leader>rn', ':Lspsaga rename<cr>', bufopts)
+  keymap.set('n', '<leader>ca', ':Lspsaga code_action<cr>', bufopts)
+  keymap.set('n', 'gr', ':Lspsaga lsp_finder<cr>', bufopts)
+  keymap.set('n', '<leader>F', format, bufopts)
 end
 
---snippets 
-
-local opts = {noremap=true, silent=true}
-
-vim.keymap.set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'', {silent=true, expr=true})
-noremap('i', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
-noremap('s', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
-noremap('s', '<Tab>', '<cmd>lua require(\'luasnip\').jump(1)<cr>', opts)
+-- Snippets
+local opts = { noremap = true, silent = true }
+keymap.set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? \'<Plug>luasnip-expand-or-jump\' : \'<Tab>\'',
+  { silent = true, expr = true })
+keymap.set('i', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
+keymap.set('s', '<S-Tab>', '<cmd>lua require(\'luasnip\').jump(-1)<cr>', opts)
+keymap.set('s', '<Tab>', '<cmd>lua require(\'luasnip\').jump(1)<cr>', opts)

@@ -3,7 +3,16 @@ local function opt(key, value)
 end
 
 opt('number', true)
+opt('title', true)
+opt('hlsearch', true)
+opt('shell', 'zsh')
 opt('hidden', true)
+opt('inccommand', 'split')
+opt('smarttab', true)
+opt('breakindent', true)
+opt('ai', true)
+opt('si', true)
+opt('wrap', false)
 opt('encoding', "utf-8")
 opt('exrc', true)
 opt('tabstop', 2)
@@ -15,8 +24,10 @@ opt('scrolloff', 8)
 opt('signcolumn', "yes")
 opt('colorcolumn', "80")
 opt('swapfile', false)
+opt('cursorline', true)
+opt('termguicolors', true)
+opt('completeopt', 'menu,menuone,noselect')
 
-vim.g['airline_powerline_fonts'] = 1
-vim.g['airline#extensions#tabline#enabled'] = 1
+vim.opt.wildignore:append { '*/node_modules/*' }
 
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme tokyonight')
