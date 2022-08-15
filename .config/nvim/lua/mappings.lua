@@ -85,7 +85,7 @@ local function format()
   return vim.lsp.buf.formatting()
 end
 
-function OnAttach(_, bufnr)
+function OnAttach(client, bufnr)
   local opts = { noremap = true, silent = true }
   keymap.set('n', '<leader>d', ':Lspsaga show_line_diagnostics<cr>', opts)
   keymap.set('n', '<leader>T', ':TroubleToggle<cr>', opts)
@@ -102,6 +102,10 @@ function OnAttach(_, bufnr)
   keymap.set('n', '<leader>ca', ':Lspsaga code_action<cr>', bufopts)
   keymap.set('n', 'gr', ':Lspsaga lsp_finder<cr>', bufopts)
   keymap.set('n', '<leader>F', format, bufopts)
+
+  if client.server_capabilities.signatureHelpProvider then
+    require('lsp-overloads').setup(client, {})
+  end
 end
 
 -- Snippets
