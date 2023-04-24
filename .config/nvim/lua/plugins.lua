@@ -9,6 +9,12 @@ return packer.startup(function(use)
   -- Plugin manager
   use 'wbthomason/packer.nvim'
 
+  -- LSP
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
+
   -- Status Line
   use {
     'hoob3rt/lualine.nvim',
@@ -16,14 +22,12 @@ return packer.startup(function(use)
   }
   use {
     'akinsho/bufferline.nvim',
-    tag = 'v2.*',
+    tag = 'v3.*',
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
   -- Themes
   use 'gruvbox-community/gruvbox'
-  use 'folke/tokyonight.nvim'
-  use 'joshdick/onedark.vim'
 
   -- Autocomplete
   use 'hrsh7th/cmp-nvim-lsp'
@@ -31,7 +35,8 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  -- Function overloads
+
+  -- -- Function overloads
   use 'Issafalcon/lsp-overloads.nvim'
 
   -- -- LuaSnip
@@ -47,7 +52,7 @@ return packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  -- Autopairs and autotags
+  -- Autopairs
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
@@ -58,9 +63,6 @@ return packer.startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'kyazdani42/nvim-web-devicons'
-
-  -- Colorizer
-  use 'norcalli/nvim-colorizer.lua'
 
   -- LSP UIs
   use {
@@ -74,11 +76,8 @@ return packer.startup(function(use)
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
-  -- Toggle comments
-  use 'preservim/nerdcommenter'
-
-  -- Lsp
-  use 'neovim/nvim-lspconfig'
+  -- Comments
+  use 'numToStr/Comment.nvim'
 
   -- Snippets
   use 'rafamadriz/friendly-snippets'
@@ -92,14 +91,7 @@ return packer.startup(function(use)
   -- Bracket pair colorizer
   use 'p00f/nvim-ts-rainbow'
 
-  -- Debugger
-  use 'mfussenegger/nvim-dap'
-  use 'rcarriga/nvim-dap-ui'
-  use 'mxsdev/nvim-dap-vscode-js'
-  use {
-    "microsoft/vscode-js-debug",
-    opt = true,
-    run = "npm install --legacy-peer-deps && npm run compile"
-  }
+  -- Omnisharp extended
+  use 'Hoffs/omnisharp-extended-lsp.nvim'
 
 end)

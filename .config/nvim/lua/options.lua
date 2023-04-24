@@ -30,4 +30,4 @@ opt('completeopt', 'menu,menuone,noselect')
 
 vim.opt.wildignore:append { '*/node_modules/*' }
 
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme gruvbox')

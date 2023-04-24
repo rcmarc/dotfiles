@@ -3,5 +3,5 @@
 [user]
 	email = ramoscarrer@gmail.com
 	name = Marcos Carrera
-[credential]
-	helper = cache
+[credential "https://dev.azure.com"]
+	useHttpPath = true
