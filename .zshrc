@@ -50,3 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Read user input from stdin
+export GPG_TTY=$(tty)
