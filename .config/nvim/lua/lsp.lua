@@ -1,13 +1,15 @@
 local mason = require('mason')
 local mlsp = require('mason-lspconfig')
 local null_ls = require('null-ls')
+local utils = require('lspconfig.util')
 
 mason.setup {}
 mlsp.setup {
-  ensure_installed = { 'lua_ls', 'tsserver', 'omnisharp', 'dockerls', 'bashls', 'cssls' }
+  ensure_installed = { 'lua_ls', 'tsserver', 'omnisharp', 'dockerls', 'bashls', 'cssls', 'tailwindcss', 'angularls' }
 }
 null_ls.setup {
   sources = {
+    null_ls.builtins.completion.tailwindcss,
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.code_actions.eslint_d,
@@ -31,6 +33,13 @@ mlsp.setup_handlers {
       },
       on_attach = OnAttach,
       capabilities = capabilities,
+    }
+  end,
+  ['angularls'] = function()
+    lspconfig['angularls'].setup {
+      on_attach = OnAttach,
+      capabilities = capabilities,
+      root_dir = utils.root_pattern('angular.json', 'project.json')
     }
   end,
   ['lua_ls'] = function()
