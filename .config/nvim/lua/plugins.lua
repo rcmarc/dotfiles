@@ -5,7 +5,6 @@ if (not status) then
 end
 
 return packer.startup(function(use)
-
   -- Plugin manager
   use 'wbthomason/packer.nvim'
 
@@ -94,4 +93,14 @@ return packer.startup(function(use)
   -- Omnisharp extended
   use 'Hoffs/omnisharp-extended-lsp.nvim'
 
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  -- -- Javascript
+  use 'mxsdev/nvim-dap-vscode-js'
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  }
 end)
