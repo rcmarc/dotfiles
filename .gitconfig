@@ -1,10 +1,8 @@
 [init]
 	defaultBranch = master
 [user]
-	email = ramoscarrer@gmail.com
+	email = ramoscarrerr@gmail.com
 	name = Marcos Carrera
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [credential]
 	helper = /usr/local/bin/git-credential-manager
 	credentialStore = gpg
