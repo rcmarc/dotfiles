@@ -1,18 +1,10 @@
 local mason = require('mason')
 local mlsp = require('mason-lspconfig')
-local null_ls = require('null-ls')
 local utils = require('lspconfig.util')
 
 mason.setup {}
 mlsp.setup {
-  ensure_installed = { 'lua_ls', 'tsserver', 'omnisharp', 'dockerls', 'bashls', 'cssls', 'tailwindcss', 'angularls' }
-}
-null_ls.setup {
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.formatting.eslint_d,
-    null_ls.builtins.code_actions.eslint_d,
-  }
+  ensure_installed = { 'lua_ls', 'tsserver', 'dockerls', 'bashls', 'cssls', 'angularls' }
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -25,11 +17,8 @@ mlsp.setup_handlers {
       capabilities = capabilities
     }
   end,
-  ['omnisharp'] = function()
-    lspconfig['omnisharp'].setup {
-      handlers = {
-        ["textDocument/definition"] = require('omnisharp_extended').handler,
-      },
+  ['csharp_ls'] = function()
+    lspconfig['csharp_ls'].setup {
       on_attach = OnAttach,
       capabilities = capabilities,
     }

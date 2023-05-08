@@ -1,5 +1,3 @@
-require('trouble').setup {}
-require('toggleterm').setup {}
 require('telescope').setup {}
 require('nvim-tree').setup {}
 require('nvim-autopairs').setup {}

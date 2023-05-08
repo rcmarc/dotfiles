@@ -81,18 +81,6 @@ return packer.startup(function(use)
   -- Snippets
   use 'rafamadriz/friendly-snippets'
 
-  -- Terminal
-  use { 'akinsho/toggleterm.nvim', tag = 'v2.*' }
-
-  -- Show diagnostics
-  use 'folke/trouble.nvim'
-
-  -- Bracket pair colorizer
-  use 'p00f/nvim-ts-rainbow'
-
-  -- Omnisharp extended
-  use 'Hoffs/omnisharp-extended-lsp.nvim'
-
   -- Debugger
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
@@ -103,4 +91,8 @@ return packer.startup(function(use)
     opt = true,
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
+
+  use 'ThePrimeagen/harpoon'
+  use 'mbbill/undotree'
+
 end)

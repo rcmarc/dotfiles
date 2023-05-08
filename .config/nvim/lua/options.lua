@@ -1,33 +1,28 @@
-local function opt(key, value)
-  vim.opt[key] = value
-end
-
-opt('number', true)
-opt('title', true)
-opt('hlsearch', true)
-opt('shell', 'zsh')
-opt('hidden', true)
-opt('inccommand', 'split')
-opt('smarttab', true)
-opt('breakindent', true)
-opt('ai', true)
-opt('si', true)
-opt('wrap', false)
-opt('encoding', "utf-8")
-opt('exrc', true)
-opt('tabstop', 2)
-opt('expandtab', true)
-opt('shiftwidth', 2)
-opt('relativenumber', true)
-opt('wrap', false)
-opt('scrolloff', 8)
-opt('signcolumn', "yes")
-opt('colorcolumn', "80")
-opt('swapfile', false)
-opt('cursorline', true)
-opt('termguicolors', true)
-opt('completeopt', 'menu,menuone,noselect')
-
-vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt['hlsearch'] = false
+vim.opt['incsearch'] = true
+vim.opt['number'] = true
+vim.opt['title'] = true
+vim.opt['shell'] = 'zsh'
+vim.opt['hidden'] = true
+vim.opt['inccommand'] = 'split'
+vim.opt['smarttab'] = true
+vim.opt['breakindent'] = true
+vim.opt['ai'] = true
+vim.opt['si'] = true
+vim.opt['wrap'] = false
+vim.opt['encoding'] = "utf-8"
+vim.opt['exrc'] = true
+vim.opt['tabstop'] = 2
+vim.opt['expandtab'] = true
+vim.opt['shiftwidth'] = 2
+vim.opt['relativenumber'] = true
+vim.opt['wrap'] = false
+vim.opt['scrolloff'] = 8
+vim.opt['signcolumn'] = "yes"
+vim.opt['colorcolumn'] = "80"
+vim.opt['swapfile'] = false
+vim.opt['cursorline'] = true
+vim.opt['termguicolors'] = true
+vim.opt['completeopt'] = 'menu,menuone,noselect'
 
 vim.cmd('colorscheme gruvbox')
