@@ -53,3 +53,5 @@ source <(ng completion script)
 
 # Read user input from stdin
 export GPG_TTY=$(tty)
+
+export PATH="$HOME/.local/bin:$PATH"
