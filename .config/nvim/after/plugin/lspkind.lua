@@ -1,7 +1,4 @@
-local status, lspkind = pcall(require, 'lspkind')
-if (not status) then
-  return
-end
+local lspkind = require('lspkind')
 
 lspkind.init({
     mode = 'symbol_text',

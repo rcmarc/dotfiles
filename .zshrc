@@ -54,4 +54,6 @@ source <(ng completion script)
 # Read user input from stdin
 export GPG_TTY=$(tty)
 
+export DOTNET_ROOT="$HOME/.dotnet"
+
 export PATH="$HOME/.local/bin:$PATH"

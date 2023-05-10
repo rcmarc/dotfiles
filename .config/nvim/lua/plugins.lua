@@ -1,8 +1,4 @@
-local status, packer = pcall(require, 'packer')
-if (not status) then
-  print('Packer is not installed')
-  return
-end
+local packer = require('packer')
 
 return packer.startup(function(use)
   -- Plugin manager
