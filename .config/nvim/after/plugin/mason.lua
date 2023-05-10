@@ -2,18 +2,8 @@ local mason = require('mason')
 local mlsp = require('mason-lspconfig')
 local utils = require('lspconfig.util')
 
-mason.setup {}
-mlsp.setup {
-  ensure_installed = {
-    'lua_ls',
-    'tsserver',
-    'dockerls',
-    'bashls',
-    'cssls',
-    'angularls',
-    'csharp_ls'
-  }
-}
+mason.setup()
+mlsp.setup()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
