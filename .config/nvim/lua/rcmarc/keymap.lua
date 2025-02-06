@@ -6,3 +6,5 @@ vim.keymap.set({'i', 'n', 'v'}, '<C-C>', '<esc>', { desc = 'Make Ctrl+C behave e
 vim.keymap.set({'n', 'v'}, '<leader>y','"+y')
 vim.keymap.set({'n', 'v'}, '<leader>p','"+p')
 
+-- nvim tree
+vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<cr>')
