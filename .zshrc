@@ -7,6 +7,7 @@ alias zshrc="$EDITOR ~/.zshrc"
 alias ls="ls --color=auto"
 alias dot="git --git-dir ~/.dots --work-tree ~"
 alias vim="nvim"
+alias cat="bat"
 
 # use the terminal prompt for ssh
 unset SSH_ASKPASS

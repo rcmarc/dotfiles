@@ -11,4 +11,5 @@
 * zsh
     * starship
 * tmux
+* bat
 
