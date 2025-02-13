@@ -5,6 +5,7 @@ return {
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback =function (args)
 					local opts = { buffer = args.buf }
+					vim.keymap.set("n", "<leader>gq", function() vim.lsp.buf.format() end, opts)
 					vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 					vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 					vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
