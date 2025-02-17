@@ -1,5 +1,3 @@
-EDITOR=nvim
-
 # good looking prompt
 eval "$(starship init zsh)"
 
@@ -8,11 +6,6 @@ alias ls="ls --color=auto"
 alias dot="git --git-dir ~/.dots --work-tree ~"
 alias vim="nvim"
 alias cat="bat"
-
-NODE_HOME="$HOME/.local/lib/node-v22.14.0-linux-x64"
-
-# set PATH
-PATH="$PATH:$HOME/.local/bin:$NODE_HOME/bin"
 
 # use the terminal prompt for ssh
 unset SSH_ASKPASS
