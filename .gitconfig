@@ -2,7 +2,7 @@
 	defaultBranch = main
 [user]
 	name = Marcos Carrera
-	email = mcramos97@yahoo.com
+	email = marcos.crs@yahoo.com
 [credential]
 	credentialStore = gpg
 	helper = /usr/local/bin/git-credential-manager
