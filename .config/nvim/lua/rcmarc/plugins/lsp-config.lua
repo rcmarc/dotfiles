@@ -2,6 +2,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		init = function()
+			vim.diagnostic.config({
+				update_in_insert = true
+			})
+
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
 					local opts = { buffer = args.buf }
