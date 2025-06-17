@@ -8,6 +8,8 @@ fi
 # User specific environment
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin"
 export EDITOR="nvim"
+export NODE_HOME="$HOME/.local/lib/node-v22.16.0-linux-x64"
+export GOPATH="$HOME/.go"
 
 alias ls="ls --color=auto"
 alias dot="git --git-dir ~/.local/lib/dotfiles --work-tree ~"
