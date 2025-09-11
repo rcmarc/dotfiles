@@ -17,6 +17,19 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+			formatting = {
+				format = function(entry, vim_item)
+					-- Set the 'menu' field of the vim_item to the source name
+					if entry.source.name == 'nvim_lsp' then
+						local lspserver_name = nil
+						pcall(function()
+							lspserver_name = entry.source.source.client.name
+							vim_item.menu = lspserver_name
+						end)
+					end
+					return vim_item
+				end
+			},
 			mapping = cmp.mapping.preset.insert({
 				['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
 				['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
