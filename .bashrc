@@ -11,6 +11,11 @@ export EDITOR="nvim"
 export NODE_HOME="$HOME/.local/lib/node-v22.16.0-linux-x64"
 export GOPATH="$HOME/.go"
 
+# DOTNET
+export DOTNET_ROOT="$HOME/.local/lib/dotnet-sdk-8.0.413-linux-x64/"
+
+# Customization
+
 alias ls="ls --color=auto"
 alias dot="git --git-dir ~/.local/lib/dotfiles --work-tree ~"
 alias vim="nvim"
