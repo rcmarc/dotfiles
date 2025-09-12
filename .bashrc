@@ -13,6 +13,10 @@ export GOPATH="$HOME/.go"
 
 # DOTNET
 export DOTNET_ROOT="$HOME/.local/lib/dotnet-sdk-8.0.413-linux-x64/"
+if [ -f "$DOTNET_ROOT/completion.sh" ]; then
+	# https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
+	source "$DOTNET_ROOT/completion.sh"
+fi
 
 # Customization
 
