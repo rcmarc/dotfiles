@@ -3,10 +3,9 @@
 [user]
 	name = Marcos Carrera
 	email = marcos.crs@yahoo.com
+[status]
+	showUntrackedFiles = no
 [credential]
-	credentialStore = gpg
 	helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
-[status]
-	showUntrackedFiles = no
