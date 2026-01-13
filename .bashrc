@@ -1,28 +1,6 @@
 # .bashrc
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-# User specific environment
-export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin"
 export EDITOR="nvim"
-export NODE_HOME="$HOME/.local/lib/node-v22.16.0-linux-x64"
-export GOPATH="$HOME/.go"
-
-# DOTNET
-export DOTNET_ROOT="$HOME/.local/lib/dotnet-sdk-8.0.413-linux-x64/"
-if [ -f "$DOTNET_ROOT/completion.sh" ]; then
-	# https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
-	source "$DOTNET_ROOT/completion.sh"
-fi
 
 # Customization
 
