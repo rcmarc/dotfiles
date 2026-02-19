@@ -16,12 +16,4 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.cmd [[ colorscheme gruvbox-material ]]
-
-vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]]
-
+vim.cmd [[ colorscheme tokyonight-storm ]]
