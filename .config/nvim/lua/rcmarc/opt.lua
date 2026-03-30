@@ -19,4 +19,12 @@ vim.opt.colorcolumn = "80"
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 
-vim.cmd [[ colorscheme tokyonight-storm ]]
+vim.cmd [[ colorscheme gruvbox ]]
+
+-- transparent background
+vim.cmd([[
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NormalNC guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
+  hi EndOfBuffer guibg=NONE ctermbg=NONE
+]])
