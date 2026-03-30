@@ -8,6 +8,14 @@ return {
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
+					local client = vim.lsp.get_client_by_id(args.data.client_id)
+					if client and client:supports_method('textDocument/completion') then
+						-- Enable completion and set autotrigger to true for automatic popup
+						vim.lsp.completion.enable(true, client.id, args.buf)
+						vim.keymap.set('i', '<c-space>', function()
+							vim.lsp.completion.get()
+						end)
+					end
 					local opts = { buffer = args.buf }
 					vim.keymap.set("n", "gq", function() vim.lsp.buf.format() end, opts)
 					vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
