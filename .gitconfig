@@ -3,3 +3,8 @@
 [user]
 	name = Marcos Carrera
 	email = marcos.crs@yahoo.com
+	signingkey = C1FBD23E6DEC1215
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
