@@ -1,0 +1,139 @@
+* {
+	font-family: DejaVu Sans, Symbola;
+}
+
+window#waybar {
+	font-weight: 600;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	margin: .3rem 0;
+}
+
+.modules-left {
+	margin-left: 1rem;
+	font-family: UbuntuMono Nerd Font;
+	border-radius: 7px;
+}
+
+#workspaces,
+#taskbar,
+#pulseaudio,
+#network,
+#battery,
+#backlight {
+	background-color: #000000;
+	font-size: 1.3rem;
+}
+
+#cpu,
+#memory,
+#temperature {
+	background-color: #000000;
+}
+
+#workspaces {
+	padding: .4rem;
+	font-size: 1.3rem;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: .5rem;
+}
+
+#workspaces button {
+	border-radius: 10px;
+	padding: .2rem 1rem .2rem .5rem;
+	transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button.focused {
+	color: #89B4FA;
+}
+
+#workspaces button:hover {
+	color: #89B4FA;
+}
+
+#custom-debicon {
+	font-family: UbuntuMono Nerd Font;
+	font-size: 1.7rem;
+	color: #D70A53;
+	padding: 0 1rem 0 .5rem;
+	background-color: #ffffff;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+#mode,
+#scratchpad,
+#custom-media,
+#window {
+	margin-right: .5rem;
+}
+
+#taskbar {
+	border-radius: 7px;
+	margin-right: 1rem;
+}
+
+#pulseaudio {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+#network,
+#battery, 
+#memory {
+	padding-right: 1.2rem;
+}
+
+#backlight {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: 1rem;
+	padding-right: 1rem;
+}
+
+#cpu {
+	padding: 0 1rem;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+#temperature {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-right: 1rem;
+	padding-right: 1rem;
+}
+
+#language {
+	margin-right: 1rem;
+}
+
+#custom-power {
+	font-weight: 700;
+	margin-right: 1rem;
+	padding: 0 .4rem 0 .6rem;
+	border-radius: 7px;
+	transition: background-color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#custom-power:hover {
+	background-color: #000000;
+}
+
+#custom-notification {
+	padding: 0 1rem 0 .7rem;
+	border-radius: 7px;
+	transition: background-color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#custom-notification:hover {
+	background-color: #000000;
+}
+
