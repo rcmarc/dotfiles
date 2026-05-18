@@ -58,3 +58,6 @@ fi
 
 # use tty for passphrase prompts
 export GPG_TTY=$(tty)
+
+# socket for ssh agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
