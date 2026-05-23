@@ -7,3 +7,6 @@ compinit
 promptinit
 
 PROMPT="%B%F{28}%n%f%b@%B%F{28}%m%f%b %~ $ "
+
+# ensure gpg prompts in the terminal
+export GPG_TTY=$(tty)
