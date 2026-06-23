@@ -64,4 +64,4 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # add user packages to PATH
-export PATH="$PATH:~/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/"
