@@ -65,3 +65,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # add user packages to PATH
 export PATH="$PATH:$HOME/.local/bin/"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rcmarc/.lmstudio/bin"
+# End of LM Studio CLI section
+
