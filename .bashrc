@@ -59,3 +59,4 @@ fi
 
 export NPM_PREFIX="~/.local/opt/npm-prefix"
 export GOPATH="$HOME/.local/opt/gopath"
+export PATH="$PATH:/home/rcmarc/.local/bin"
