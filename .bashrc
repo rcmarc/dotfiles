@@ -57,16 +57,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# use tty for passphrase prompts
-export GPG_TTY=$(tty)
-
-# socket for ssh agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-# add user packages to PATH
-export PATH="$PATH:$HOME/.local/bin/"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/rcmarc/.lmstudio/bin"
-# End of LM Studio CLI section
-
+export NPM_PREFIX="~/.local/opt/npm-prefix"
+export GOPATH="$HOME/.local/opt/gopath"
