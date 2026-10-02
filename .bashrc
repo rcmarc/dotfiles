@@ -94,6 +94,7 @@ fi
 
 
 export EDITOR="nvim"
+export GPG_TTY=$(tty)
 export NPM_PREFIX="$HOME/.local/opt/npm-prefix"
 export GOPATH="$HOME/.local/opt/gopath"
 export PATH="$PATH:$HOME/.local/bin"
