@@ -77,10 +77,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-alias dot="git --git-dir ~/.local/opt/dotfiles --work-tree ~"
-alias vi="nvim"
-alias vim="nvim"
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -94,7 +90,4 @@ fi
 
 
 export EDITOR="nvim"
-export GPG_TTY=$(tty)
-export NPM_PREFIX="$HOME/.local/opt/npm-prefix"
-export GOPATH="$HOME/.local/opt/gopath"
 export PATH="$PATH:$HOME/.local/bin"
